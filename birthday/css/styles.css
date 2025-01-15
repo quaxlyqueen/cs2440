@@ -1,0 +1,29 @@
+body {
+  margin: 2vw;
+  background-color: #091A19;
+}
+
+#content {}
+
+#header-container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#header-container h1 {
+  color: #E0EAD9;
+}
+
+#pic-container {
+  margin: 0 auto;
+  width: 50%;
+}
+
+img {
+  width: 100%;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+}
