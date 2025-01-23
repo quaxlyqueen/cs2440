@@ -1,0 +1,36 @@
+name: Deploy CSIS 2440
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  deploy:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+
+      # Saves the private key and adds your server to the list of known hosts
+      - name: SSH Setup
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          sudo chmod 600 ~/.ssh/id_rsa
+          echo "$SSH_HOST_THUMBPRINT" > ~/.ssh/known_hosts
+        shell: bash
+        env:
+          SSH_PRIVATE_KEY: ${{secrets.DBP_LOGIN_KEY}}
+          SSH_HOST_THUMBPRINT: ${{secrets.DBP_THUMBPRINT}}
+
+      # Connects to your server via ssh and runs the deploy bash script
+      - name: Run Deploy Script
+        run: ssh -i ~/.ssh/id_rsa prod@secrets.IP_ADDRESS sh 2440-deploy.sh
