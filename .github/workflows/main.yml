@@ -33,4 +33,4 @@ jobs:
 
       # Connects to your server via ssh and runs the deploy bash script
       - name: Run Deploy Script
-        run: ssh -i ~/.ssh/id_rsa prod@${{secrets.IP_ADDRESS}} sh 2440-deploy.sh
+        run: ssh -i ~/.ssh/id_rsa prod@${{secrets.IP_ADDRESS}} sh 2440/2440-deploy.sh
