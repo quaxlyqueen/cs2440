@@ -26,7 +26,7 @@ $albums = [
 <html lang="en">
 
 <head>
-  <title>Spotify Auth</title>
+  <title>Favorite Albums</title>
   <link rel="stylesheet" href="css/styles.css" type="text/css">
 </head>
 
