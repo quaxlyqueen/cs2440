@@ -11,6 +11,7 @@ exec('php explore.php &');
     <link rel="stylesheet" href="css/styles.css" type="text/css">
     <script src="js/switch.js"></script>
 </head>
+
 <body>
     <h1>My Favorite Albums</h1>
     <button onclick=modeSwitch() type="submit">Click me</button>
