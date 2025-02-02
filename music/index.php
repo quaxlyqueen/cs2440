@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ('core.php');
+include ('login.php');
 exec('php explore.php &');
 ?>
 <!DOCTYPE html>
@@ -14,12 +14,10 @@ exec('php explore.php &');
 
 <body>
     <h1>My Favorite Albums</h1>
-    <button onclick=modeSwitch() type="submit">Click me</button>
+    <button id="switcher" onclick=modeSwitch('core')>Core</button>
 
     <div id="content">
-    <?php
-    echo get_core();
-    ?>
+    <?php include ('explore.php'); ?>
     </div>
 </body>
 </html>
