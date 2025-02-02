@@ -7,7 +7,7 @@ $dotenv->safeLoad();
 session_start();
 $client_id = $_ENV['SPOTIFY_CLIENT_ID'];
 $client_secret = $_ENV['SPOTIFY_CLIENT_SECRET'];
-$auth_code = $_GET['code'];
+$_SESSION['auth_code'] = $_GET['code'];
 
 $client_credentials = get_client_credentials($client_id, $client_secret);
 
@@ -112,31 +112,31 @@ function get_access_token($auth_code, $client_id, $client_secret)
 
 function get_albums($auth_code, $client_id, $client_secret)
 {
-    $access_token = get_access_token($auth_code, $client_id, $client_secret);
-    $url = 'https://api.spotify.com/v1/me/top/tracks';
-
-    $ch = curl_init($url);
-
-    curl_setopt_array($ch, array(
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_HTTPHEADER => array(
-            "Authorization: Bearer $access_token"
-        )
-    ));
-
-    $response = curl_exec($ch);
-
-    if (curl_errno($ch)) {
-        echo curl_error($ch);
-        return;
-    } else {
-        $data = json_decode($response, true);
-        $top_songs = $data['items'];
-    }
-    curl_close($ch);
-
-    $song_data = [];
     if ($_SESSION['data'] == null) {
+        $access_token = get_access_token($auth_code, $client_id, $client_secret);
+        $url = 'https://api.spotify.com/v1/me/top/tracks';
+
+        $ch = curl_init($url);
+
+        curl_setopt_array($ch, array(
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_HTTPHEADER => array(
+                "Authorization: Bearer $access_token"
+            )
+        ));
+
+        $response = curl_exec($ch);
+
+        if (curl_errno($ch)) {
+            echo curl_error($ch);
+            return;
+        } else {
+            $data = json_decode($response, true);
+            $top_songs = $data['items'];
+        }
+        curl_close($ch);
+
+        $song_data = [];
         foreach ($top_songs as $song) {
             $song_data[] = array(
                 'image' => $song['album']['images'][0]['url'],
@@ -148,7 +148,6 @@ function get_albums($auth_code, $client_id, $client_secret)
             );
         }
 
-        echo "saving data to $_SESSION";
         $_SESSION['data'] = $song_data;
     } else {
         $song_data = $_SESSION['data'];
@@ -165,5 +164,5 @@ function get_albums($auth_code, $client_id, $client_secret)
     }
 }
 
-get_albums($auth_code, $client_id, $client_secret);
+get_albums($_SESSION['auth_code'], $client_id, $client_secret);
 ?>

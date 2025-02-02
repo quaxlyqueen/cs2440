@@ -1,6 +1,10 @@
 <?php
 session_start();
-include ('login.php');
+
+if (!isset($_GET['code'])) {
+    header('Location: http://localhost:9753/login');
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,8 +17,7 @@ include ('login.php');
 
 <body>
     <h1>My Favorite Albums</h1>
-    <button id="switcher" onclick=modeSwitch('core')>Core</button>
-
+    <button id="switcher" onclick=modeSwitch('core')>Explore</button>
     <div id="content">
     <?php include ('explore.php'); ?>
     </div>
