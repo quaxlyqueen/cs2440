@@ -23,9 +23,9 @@ func main() {
 	}
 	client_id := os.Getenv("SPOTIFY_CLIENT_ID")
 
-	redirect_uri := "http://localhost/music"
+	redirect_uri := "cs2440.joshashton.dev/music"
 
-	http.HandleFunc("/login", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/spotify-login", func(w http.ResponseWriter, r *http.Request) {
 		scope := "user-top-read"
 
 		redirectURL := "https://accounts.spotify.com/authorize?" + strings.Join([]string{
