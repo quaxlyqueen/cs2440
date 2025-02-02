@@ -114,7 +114,7 @@ function get_albums($auth_code, $client_id, $client_secret)
 {
     if ($_SESSION['data'] == null) {
         $access_token = get_access_token($auth_code, $client_id, $client_secret);
-        $url = 'https://api.spotify.com/v1/me/top/tracks';
+        $url = 'https://api.spotify.com/v1/me/top/tracks?time_range=long_term';
 
         $ch = curl_init($url);
 
