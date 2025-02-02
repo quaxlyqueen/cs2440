@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_GET['code'])) {
-    header('Location: https://api.joshashton.dev/spotify-login');
+    header('Location: https://login.joshashton.dev/');
     exit;
 }
 ?>

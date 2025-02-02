@@ -17,15 +17,15 @@ func generateRandomString(length int) string {
 }
 
 func main() {
-	err := godotenv.Load("../music/.env")
-	if err != nil {
-		log.Fatalf("Error loading .env file: %s", err)
-	}
-	client_id := os.Getenv("SPOTIFY_CLIENT_ID")
 
-	redirect_uri := "cs2440.joshashton.dev/music"
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		err := godotenv.Load("../music/.env")
+		if err != nil {
+			log.Fatalf("Error loading .env file: %s", err)
+		}
 
-	http.HandleFunc("/spotify-login", func(w http.ResponseWriter, r *http.Request) {
+		client_id := os.Getenv("SPOTIFY_CLIENT_ID")
+		redirect_uri := "https://cs2440.joshashton.dev/music"
 		scope := "user-top-read"
 
 		redirectURL := "https://accounts.spotify.com/authorize?" + strings.Join([]string{
