@@ -1,7 +1,6 @@
 <?php
 session_start();
 include ('login.php');
-exec('php explore.php &');
 ?>
 <!DOCTYPE html>
 <html lang="en">

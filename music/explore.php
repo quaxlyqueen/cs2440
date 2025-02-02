@@ -7,9 +7,7 @@ $html = '';
 
 $client_id = $_ENV['SPOTIFY_CLIENT_ID'];
 $client_secret = $_ENV['SPOTIFY_CLIENT_SECRET'];
-// $auth_code = $_ENV['SPOTIFY_AUTH_CODE'];
 $auth_code = $_GET['code'];
-// $auth_state = $_GET['state'];
 
 $client_credentials = get_client_credentials($client_id, $client_secret);
 

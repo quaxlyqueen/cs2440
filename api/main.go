@@ -17,7 +17,7 @@ func generateRandomString(length int) string {
 }
 
 func main() {
-	err := godotenv.Load("../.env")
+	err := godotenv.Load("../music/.env")
 	if err != nil {
 		log.Fatalf("Error loading .env file: %s", err)
 	}
@@ -38,5 +38,5 @@ func main() {
 		http.Redirect(w, r, redirectURL, http.StatusFound)
 	})
 
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":9753", nil)
 }
