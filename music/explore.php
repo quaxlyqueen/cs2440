@@ -79,7 +79,6 @@ function get_access_token($auth_code, $client_id, $client_secret)
     $data = array(
         'grant_type' => 'authorization_code',
         'code' => $auth_code,
-        // 'redirect_uri' => 'http://localhost/music'
         'redirect_uri' => 'https://cs2440.joshashton.dev/music'
     );
 

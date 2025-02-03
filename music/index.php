@@ -3,7 +3,6 @@ session_start();
 
 if (!isset($_GET['code'])) {
     header('Location: https://login.joshashton.dev/');
-    // header('Location: http://localhost:9753/');
     exit;
 }
 ?>
