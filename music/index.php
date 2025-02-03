@@ -3,6 +3,7 @@ session_start();
 
 if (!isset($_GET['code'])) {
     header('Location: https://login.joshashton.dev/');
+    // header('Location: http://localhost:9753/');
     exit;
 }
 ?>
@@ -16,8 +17,7 @@ if (!isset($_GET['code'])) {
 </head>
 
 <body>
-    <h1>My Favorite Albums</h1>
-    <button id="switcher" onclick=modeSwitch('core')>Explore</button>
+    <button id="switcher" onclick=modeSwitch('core')>Core</button>
     <div id="content">
     <?php include ('explore.php'); ?>
     </div>

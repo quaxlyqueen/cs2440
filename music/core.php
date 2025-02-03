@@ -17,12 +17,13 @@ $content = '';
 foreach ($albums as $album) {
     $content = $content . '
         <tr>
-            <td><a href="' . $album['link'] . '" target="_blank">' . $album['name'] . '</a></td>
+            <td><a style="color: black" href="' . $album['link'] . '" target="_blank">' . $album['name'] . '</a></td>
             <td>' . $album['artist'] . '</td>
         </tr>';
 }
 
 $html = '
+    <h1>My Favorite Albums</h1>
     <table>
         <tr>
             <th>Name</th>

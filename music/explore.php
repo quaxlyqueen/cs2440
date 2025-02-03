@@ -79,6 +79,7 @@ function get_access_token($auth_code, $client_id, $client_secret)
     $data = array(
         'grant_type' => 'authorization_code',
         'code' => $auth_code,
+        // 'redirect_uri' => 'http://localhost/music'
         'redirect_uri' => 'https://cs2440.joshashton.dev/music'
     );
 
@@ -145,6 +146,7 @@ function get_albums($auth_code, $client_id, $client_secret)
                 'album_name' => $song['album']['name'],
                 'album_id' => $song['album']['id'],
                 'artist' => $song['artists'][0]['name'],
+                'artist_id' => $song['artists'][0]['id'],
             );
         }
 
@@ -153,15 +155,21 @@ function get_albums($auth_code, $client_id, $client_secret)
         $song_data = $_SESSION['data'];
     }
 
+    echo '<div class="center">';
+    echo '<h1>Your Favorite Songs</h1>';
+    echo '<div id="songs">';
     foreach ($song_data as $s) {
         echo '
-            <img src="' . $s['image'] . '">
-            <h3>Name: ' . $s['song_name'] . ' - ' . $s['artist'] . '</h3>
-            <h4>Album: ' . $s['album_name'] . '</h4>
-            <h6>Song ID: ' . $s['song_id'] . '</h6>
-            <h6>Album ID: ' . $s['album_id'] . '</h6>
+            <div class="song_card center">
+                <img src="' . $s['image'] . '">
+                <h3><a target="_blank" href="https://open.spotify.com/track/' . $s['song_id'] . '">' . $s['song_name'] . '</a></h3>
+                <h4><a target="_blank" href="https://open.spotify.com/artist/' . $s['artist_id'] . '">' . $s['artist'] . '</a></h4>
+                <h5><a target="_blank" href="https://open.spotify.com/album/' . $s['album_id'] . '">' . $s['album_name'] . '</a></h5>
+            </div>
         ';
     }
+    echo '</div>';
+    echo '</div>';
 }
 
 get_albums($_SESSION['auth_code'], $client_id, $client_secret);
