@@ -85,3 +85,16 @@ td {
 #switcher:hover {
   background-color: #E75D4B;
 }
+
+@media (max-width: 900px) {
+  #song {
+    display: grid;
+    grid-template-columns: 40% 40%;
+    column-gap: 20%;
+    row-gap: 75px;
+
+    width: 80%;
+
+    justify-content: center;
+  }
+}
