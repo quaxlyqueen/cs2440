@@ -100,7 +100,6 @@ td {
 /**Responsiveness**/
 @media screen and (max-width: 900px) {
   #songs {
-    background-color: green;
     grid-template-columns: 40% 40%;
     column-gap: 20%;
     row-gap: 75px;
