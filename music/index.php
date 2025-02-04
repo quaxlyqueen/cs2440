@@ -1,11 +1,3 @@
-<?php
-session_start();
-
-if (!isset($_GET['code'])) {
-    header('Location: https://login.joshashton.dev/');
-    exit;
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,9 +9,9 @@ if (!isset($_GET['code'])) {
 </head>
 
 <body>
-    <button id="switcher" onclick=modeSwitch('core')>Core</button>
+    <a href="explore"><button id="switcher">Spotify Exploration</button></a>
     <div id="content">
-    <?php include ('explore.php'); ?>
+    <?php include ('core.php'); ?>
     </div>
 </body>
 </html>

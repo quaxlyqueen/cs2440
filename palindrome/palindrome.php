@@ -1,5 +1,9 @@
 <?php
-$input = $_GET['input'];
+if (isset($_GET['input']))
+    $input = $_GET['input'];
+else
+    echo '<p>Enter something!</p';
+
 $sanitized_input = sanitize_input($input);
 if ($sanitized_input == strrev($sanitized_input))
     $output = '<p>Is Palindrome</p>';
@@ -8,30 +12,11 @@ else
 
 function sanitize_input($input)
 {
+    $invalid_chars = [' ', "'", '?', '/', '\\', '.', ','];
     $output = strtolower($input);
     $output = trim($output);
-    $output = str_replace([',', ' '], '', $output);
+    $output = str_replace($invalid_chars, '', $output);
 
     return $output;
 }
 ?>
-
-<!doctype html>
-<html lang="en">
-
-<head>
-  <title>Palindrome Tester</title>
-</head>
-
-<body>
-  <h1>Palindrome Tester</h1>
-  <form action="palindrome.php" method="[post | get]">
-    <input type="text" name="input">
-    <input type="submit">
-  </form>
-  <?php
-echo $output;
-?>
-</body>
-
-</html>
