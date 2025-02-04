@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <a href="explore"><button id="switcher">Spotify Exploration</button></a>
+    <a href="explore"><button id="switcher">Spotify API Exploration</button></a>
     <div id="content">
     <?php include ('core.php'); ?>
     </div>
