@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Positioning */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* Styling */
+  background-color: #bbedbe;
+}
+
+h1 {
+  /* Positioning */
+  width: 80%;
+  padding: 2vw;
+
+  /* Font */
+  font-size: 8vw;
+  text-align: center;
+}
+
+h3 {
+  font-size: 4vw;
+}
+
+h1,
+h3,
+p,
+input {
+  color: #0e3610;
+}
+
+form {
+  width: 60%;
+  padding: 2.5vw 5vw 2.5vw 5vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  /* Input Shape */
+  width: 50%;
+  padding: 1vw;
+  margin: 1vw;
+  border: none;
+  border-radius: 18px;
+
+  /* Styling */
+  background-color: #f1fbf2;
+
+  /* Font */
+  font-size: 1vw;
+  font-weight: 400;
+}
+
+button {
+  /* Button Shape */
+  width: 40%;
+  padding: 1vw;
+  margin: 1vw;
+  border: none;
+  border-radius: 18px;
+
+  /* Font */
+  color: white;
+  font-size: 1vw;
+  font-weight: 600;
+
+  /* Transition for hover */
+  transition-duration: 500ms;
+
+  background-color: #1c6b20;
+}
+
+.card {
+  padding: 2vw;
+  background-color: gray;
+  border-radius: 18px;
+}
+
+.error {
+  color: white;
+  background-color: red;
+}
+
+.success {
+  color: white;
+  background-color: #0e3610;
+}
+
+.reset {
+  background-color: red;
+}

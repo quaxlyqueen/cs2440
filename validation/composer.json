@@ -1,0 +1,10 @@
+{
+    "name": "violet/validation",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Violet\\Validation\\": "src/"
+        }
+    },
+    "require": {}
+}
