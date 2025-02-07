@@ -9,7 +9,6 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     if (array_key_exists($username, $users) && $users[$username] === $password) {
-        $_GET['error'] = false;
         $_SESSION['access'] = true;
         $_GET['file'] = 'includes/fbi.txt';
     } else {
@@ -35,40 +34,40 @@ if (isset($_GET['logout'])) {
 
 <body>
 <h1>View Confidential Information</h1>
-<?php if (isset($_SESSION['access']) && $_SESSION['access'] !== true): ?>
-
-<?php if (isset($_GET['error']) && $_GET['error'] === true): ?>
-<div class="card error">
-  <h5 class="error">Access Denied.</h5>
-</div>
-<?php endif; ?>
-
-<form method="post">
-  <div class="row">
-    <input name="username" type="text" placeholder="username">
-    <input name="password" type="password" placeholder="password">
-  </div>
-  <div class="row">
-    <button>Submit</button>
-    <button type="reset" class="reset">Reset</button>
-  </div>
-</form>
-
-<?php else: ?>
-  <div class="card success">
-    <h5 class="success">Access Granted.</h5>
-  </div>
-  <form method="get">
-    <div class="row">
-      <button name="file" value="includes/fbi.txt">FBI</button>
-      <button name="file" value="includes/spies.txt">Spies</button>
-      <button name="logout" value="true" class="reset">Logout</button>
-    </div>
-  </form>
-<?php endif; ?>
-
 <?php
-if (isset($_GET['file']) && isset($_SESSION['access'])) {
+if ($_SESSION['access'] !== true) {
+    if (isset($_GET['error']) && $_GET['error'] === true) {
+        echo '
+          <div class="card error">
+            <h5 class="error">Access Denied.</h5>
+          </div>
+        ';
+    }
+    echo '
+        <form method="post">
+          <div class="row">
+            <input name="username" type="text" placeholder="username">
+            <input name="password" type="password" placeholder="password">
+          </div>
+          <div class="row">
+            <button>Submit</button>
+            <button type="reset" class="reset">Reset</button>
+          </div>
+        </form>
+    ';
+} else if (isset($_GET['file']) && isset($_SESSION['access'])) {
+    echo '
+    <div class="card success">
+      <h5 class="success">Access Granted.</h5>
+    </div>
+    <form method="get">
+      <div class="row">
+        <button name="file" value="includes/fbi.txt">FBI</button>
+        <button name="file" value="includes/spies.txt">Spies</button>
+        <button name="logout" value="true" class="reset">Logout</button>
+      </div>
+    </form>
+  ';
     fileRead($_GET['file']);
 }
 ?>
