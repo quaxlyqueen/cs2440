@@ -1,0 +1,10 @@
+{
+    "name": "violet/spies",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Violet\\Spies\\": "src/"
+        }
+    },
+    "require": {}
+}
