@@ -4,12 +4,20 @@ require_once 'vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
 $db_pass = $_ENV['DATABASE_PASSWORD'];
+$ip_addr = $_ENV['IP_ADDRESS'];
 
 // Make some constants
-define('HOST', '173.255.248.228');
-define('USER', 'root');
-define('PASS', $db_pass);
-define('DB', 'palindromes');
+if ($_SERVER['HTTP_HOST'] == 'localhost') {
+    define('HOST', 'localhost');
+    define('USER', 'root');
+    define('PASS', $db_pass);
+    define('DB', 'palindromes');
+} else {
+    define('HOST', $ip_addr);
+    define('USER', 'root');
+    define('PASS', $db_pass);
+    define('DB', 'palindromes');
+}
 
 // Connect to the DB
 $conn = mysqli_connect(HOST, USER, PASS, DB);
