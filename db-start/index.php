@@ -6,17 +6,10 @@ $dotenv->safeLoad();
 $db_pass = $_ENV['DATABASE_PASSWORD'];
 
 // Make some constants
-if ($_SERVER['HTTP_HOST'] == 'localhost') {
-    define('HOST', 'localhost');
-    define('USER', 'root');
-    define('PASS', $db_pass);
-    define('DB', 'palindromes');
-} else {
-    define('HOST', 'cs2440.joshashton.dev');
-    define('USER', 'root');
-    define('PASS', $db_pass);
-    define('DB', 'palindromes');
-}
+define('HOST', '173.255.248.228');
+define('USER', 'root');
+define('PASS', $db_pass);
+define('DB', 'palindromes');
 
 // Connect to the DB
 $conn = mysqli_connect(HOST, USER, PASS, DB);
