@@ -7,7 +7,6 @@ $db_pass = $_ENV['DATABASE_PASSWORD'];
 $ip_addr = $_ENV['IP_ADDRESS'];
 
 // Make some constants
-<<<<<<< HEAD:db-test/index.php
 if ($_SERVER['HTTP_HOST'] == 'localhost') {
     define('HOST', 'localhost');
     define('USER', 'root');
@@ -19,12 +18,6 @@ if ($_SERVER['HTTP_HOST'] == 'localhost') {
     define('PASS', $db_pass);
     define('DB', 'palindromes');
 }
-=======
-define('HOST', '173.255.248.228');
-define('USER', 'root');
-define('PASS', $db_pass);
-define('DB', 'palindromes');
->>>>>>> b805261 (localhost and server configuration are the same.):db-start/index.php
 
 // Connect to the DB
 $conn = mysqli_connect(HOST, USER, PASS, DB);
