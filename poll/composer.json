@@ -1,8 +1,8 @@
 {
-    "name": "violet/db-start",
+    "name": "violet/poll",
     "autoload": {
         "psr-4": {
-            "Violet\\DbStart\\": "src/"
+            "Violet\\Poll\\": "src/"
         }
     },
     "authors": [

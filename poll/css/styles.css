@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #bbedbe;
+}
+
+h1 {
+  font-size: 6vw;
+}
+
+h3 {
+  font-size: 3vw;
+}
+
+p {
+  font-size: 1vw;
+}
+
+h1,
+h3,
+p,
+input {
+  color: #0e3610;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 60%;
+
+  border-radius: 18px;
+
+  background-color: #26942D;
+  padding: 1vw;
+}
+
+.option {
+  text-align: center;
+  padding: 1vw;
+}
+
+.option label:hover {
+  background-color: green;
+  color: #f1fbf2;
+}
+
+label {
+  background-color: #f1fbf2;
+  color: #0e3610;
+  display: inline-block;
+  width: 100%;
+  font-size: 2vw;
+  cursor: pointer;
+
+  border-radius: 18px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.option label.checked {
+  color: #f1fbf2;
+  background-color: #0e3610;
+}
+
+button {
+  /* Button Shape */
+  grid-column: span 2;
+  padding: 1vw;
+  border: none;
+  border-radius: 18px;
+
+  /* Font */
+  color: white;
+  font-size: 1vw;
+  font-weight: 600;
+
+  /* Transition for hover */
+  transition-duration: 500ms;
+
+  background-color: #1c6b20;
+}
+
+button:hover {
+  background-color: #0e3610;
+  color: #f1fbf2;
+}
+
+.chart {
+  background-color: #f1fbf2;
+  border-radius: 18px;
+  padding: 1vw;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 10% 90%;
+}
+
+.chart-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 10px;
+  text-align: right;
+}
+
+.bar {
+  padding: 1vw 0 1vw 0;
+  margin: 10px 0 10px 0;
+  background-color: #0e3610;
+}
+
+.bar-label {
+  margin-left: 10px;
+  color: #f1fbf2;
+  font-weight: 800;
+}
