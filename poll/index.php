@@ -96,7 +96,7 @@ function updateDb($option)
     // Run DB query
     $results = mysqli_query($conn, $sql);
     if (mysqli_num_rows($results) == 0) {
-        $sql = "INSERT INTO poll_results (option, count) VALUES (' . $option . ', 1)";
+        $sql = "INSERT INTO poll_results (option, count) VALUES ('$option', 1)";
         $results = mysqli_query($conn, $sql);
     } else {
         $sql = 'UPDATE poll_results SET count = count + 1 WHERE option = "' . $option . '";';
