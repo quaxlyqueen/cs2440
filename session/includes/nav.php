@@ -12,12 +12,12 @@ echo '
 
 function getLogoutButton()
 {
-    if ($_SESSION['access'] === true)
+    if ($_SESSION['new-access'] === true)
         return '<button name="logout" value="true" class="reset">Logout</button>';
 }
 
 if (isset($_GET['logout'])) {
-    $_SESSION['access'] = false;
+    $_SESSION['new-access'] = false;
     session_destroy();
     header('Location: .');
 }

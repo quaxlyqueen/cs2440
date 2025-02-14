@@ -19,7 +19,7 @@ if ($_SERVER['HTTP_HOST'] == 'localhost') {
 function getHome()
 {
     echo '<h1>View Confidential Information</h1>';
-    if ($_SESSION['access'] !== true) {
+    if ($_SESSION['new-access'] !== true) {
         if (isset($_GET['error']) && $_GET['error'] === true) {
             echo '
           <div class="card error">
@@ -103,7 +103,7 @@ function authUser()
             $row = mysqli_fetch_assoc($results);
 
             if ($row['password'] == $password) {
-                $_SESSION['access'] = true;
+                $_SESSION['new-access'] = true;
                 $_GET['file'] = 'includes/fbi.txt';
                 $_SESSION['username'] = $username;
             } else {

@@ -1,5 +1,8 @@
 <?php
 session_start();
+if ($_SESSION['new-access'] == true) {
+    $_SESSION['new-access'] = false;
+}
 require_once 'vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
@@ -18,7 +21,7 @@ authUser();
     </head>
 
     <body>
-        <?php include ('includes/nav.php'); ?>
+        <?php include_once ('includes/nav.php'); ?>
         <div id="content">
             <?php
             $page = $_GET['page'];

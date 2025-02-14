@@ -37,10 +37,6 @@ $poll_options = [
     'Visual Studio Code',
     'XCode',
 ];
-
-if (isset($_POST['option'])) {
-    setcookie('form_submitted', 'true', time() + 3600, '/');  // Expires in 1 hour (adjust as needed)
-}
 ?>
 
 <!doctype html>
@@ -55,7 +51,7 @@ if (isset($_POST['option'])) {
 <body>
   <h1>Poll</h1>
 <?php
-if (!isset($_POST['option']) && !isset($_COOKIE['form_submitted'])) {
+if (!isset($_POST['option'])) {
     echo '
 <h3>What is the best text editor or IDE?</h3>
   <form method="post">';
@@ -76,10 +72,7 @@ if (!isset($_POST['option']) && !isset($_COOKIE['form_submitted'])) {
   </form>';
 } else {
     echo "<h3>Thank you! Here's the results.</h3>";
-    if ($_COOKIE['form_submitted'])
-        displayChart();
-    else
-        updateDb($_POST['option']);
+    updateDb($_POST['option']);
 }
 ?>
 </body>
