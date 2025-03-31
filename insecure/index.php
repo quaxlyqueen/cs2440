@@ -61,8 +61,8 @@ if (isset($_GET['logout'])) {
 
 <head>
     <title>Spies</title>
-    <link href="css/styles.css" type="text/css" rel="stylesheet">
-    <script src="js/index.js"></script>
+    <link href="insecure/css/styles.css" type="text/css" rel="stylesheet">
+    <script src="insecure/js/index.js"></script>
 </head>
 
 <body>
