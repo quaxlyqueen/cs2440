@@ -19,7 +19,7 @@ if ($_SERVER['HTTP_HOST'] == 'localhost') {
 function getHome()
 {
     echo '<h1>View Confidential Information</h1>';
-    if ($_SESSION['new-access'] !== true) {
+    if ($_SESSION['new-access'] != true) {
         if (isset($_GET['error']) && $_GET['error'] === true) {
             echo '
           <div class="card error">
@@ -152,4 +152,3 @@ function update_user_pw($password)
         ';
     }
 }
-?>

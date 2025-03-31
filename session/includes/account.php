@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if ($_SESSION['new-access'] !== true)
+if ($_SESSION['new-access'] != true)
     header('Location: .');
 
 include_once('functions.php');
