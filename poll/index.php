@@ -43,21 +43,21 @@ $poll_options = [
 <html lang="en">
 
 <head>
-  <title>Poll</title>
-  <link href="css/styles.css" type="text/css" rel="stylesheet">
-  <script src="js/index.js" defer></script>
+    <title>Poll</title>
+    <link href="poll/css/styles.css" type="text/css" rel="stylesheet">
+    <script src="poll/js/index.js" defer></script>
 </head>
 
 <body>
-  <h1>Poll</h1>
-<?php
-if (!isset($_POST['option'])) {
-    echo '
+    <h1>Poll</h1>
+    <?php
+    if (!isset($_POST['option'])) {
+        echo '
 <h3>What is the best text editor or IDE?</h3>
   <form method="post">';
 
-    foreach ($poll_options as $option) {
-        echo '
+        foreach ($poll_options as $option) {
+            echo '
       <div class="option">
         <label for="' . $option . '">
         <input type="radio" value="' . $option . '" id="' . $option . '" name="option">
@@ -65,16 +65,16 @@ if (!isset($_POST['option'])) {
         </label>
       </div>
     ';
-    }
+        }
 
-    echo '
+        echo '
     <button>Submit</button>
   </form>';
-} else {
-    echo "<h3>Thank you! Here's the results.</h3>";
-    updateDb($_POST['option']);
-}
-?>
+    } else {
+        echo "<h3>Thank you! Here's the results.</h3>";
+        updateDb($_POST['option']);
+    }
+    ?>
 </body>
 
 </html>

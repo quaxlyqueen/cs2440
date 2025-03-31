@@ -1,0 +1,15 @@
+Killing is my Business . . . and Business is Good!;1985;8;img/kimbabig.jpg++--++
+Peace Sells . . . But Who's Buying?;1986;8;img/psbwb.jpg++--++
+So Far, So Good . . . So What!;1988;8;img/sfsgsw.jpg++--++
+Rust in Peace;1990;9;img/rip.jpg++--++
+Countdown to Exctinction;1992;11;img/cte.jpg++--++
+Youthanasi;1994;12;img/ya.jpg++--++
+Cryptic Writings;1997;12;img/cw.jpg++--++
+Risk;1999;12;img/risk.jpg++--++
+The World Needs a Hero;2001;12;img/twnah.jpg++--++
+The System has Failed;2004;12;img/tshf.jpg++--++
+United Abominations;2007;11;img/ua.jpg++--++
+Endgame;2009;11;img/eg.jpg++--++
+13;2011;13;img/13.jpg++--++
+Super Colider;2013;14;img/sc.jpg++--++
+Dystopia;2016;11;img/dys.jpg

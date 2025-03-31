@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
-  <title>Dummy Title</title>
-  <link href="css/styles.css" type="text/css" rel="stylesheet">
-  <script src="js/index.js"></script>
+    <title>Dummy Title</title>
+    <link href="validation/css/styles.css" type="text/css" rel="stylesheet">
+    <script src="validation/js/index.js"></script>
 </head>
 
 <body>
-  <h1>Validation Assignment</h1>
-<?php
-validate($_POST['phone_number']);
-?>
+    <h1>Validation Assignment</h1>
+    <?php
+    validate($_POST['phone_number']);
+    ?>
 
 </body>
 
@@ -27,7 +27,7 @@ function validate($number)
         <div class="card success">
           <h3 class="success">Thank You!</h3>
           <p class="success">You entered: ' . $number . ', a valid phone number.</p>
-          <img src="img/success.jpg" />
+          <img src="validation/img/success.jpg" />
         </div>
 ';
     } else {

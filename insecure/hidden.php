@@ -43,26 +43,26 @@ function fileRead($file)
 <html lang="en">
 
 <head>
-  <title>Spies</title>
-  <link href="css/styles.css" type="text/css" rel="stylesheet">
-  <script src="js/index.js"></script>
+    <title>Spies</title>
+    <link href="insecure/css/styles.css" type="text/css" rel="stylesheet">
+    <script src="insecure/js/index.js"></script>
 </head>
 
 <body>
-  <h1>View Confidential Information</h1>
+    <h1>View Confidential Information</h1>
 
-<?php
-if ($access) {
-    echo '<p>Access Granted</p>';
+    <?php
+    if ($access) {
+        echo '<p>Access Granted</p>';
 
-    echo '
+        echo '
         <button name="fbi" type="submit" method="get">FBI</button>
         <button name="spies" type="submit" method="get">Spies</button>
     ';
 
-    fileRead($file);
-}
-?>
+        fileRead($file);
+    }
+    ?>
 </body>
 
 </html>

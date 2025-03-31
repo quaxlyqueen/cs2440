@@ -34,4 +34,3 @@ $results = mysqli_query($conn, $sql);
 while ($row = mysqli_fetch_array($results, MYSQLI_ASSOC)) {
     echo $row['phrase'] . '<br>';
 };
-?>

@@ -13,8 +13,8 @@ if (isset($_POST['phone_number']))
 
 <head>
   <title>Input</title>
-  <link href="css/styles.css" rel="stylesheet" type="text/css">
-  <script src="js/index.js"></script>
+  <link href="input/css/styles.css" rel="stylesheet" type="text/css">
+  <script src="input/js/index.js"></script>
 </head>
 
 <body>
@@ -51,4 +51,5 @@ if ($first_name || $last_name || $email || $phone_number) {
 }
 ?>
 </body>
+
 </html>

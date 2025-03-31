@@ -22,14 +22,15 @@ $_SESSION['code'] = $_GET['code'];
 
 <head>
     <title>Favorite Albums</title>
-    <link rel="stylesheet" href="../css/styles.css" type="text/css">
+    <link rel="stylesheet" href="music/css/styles.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="js/switch.js"></script>
+    <script src="music/js/switch.js"></script>
 </head>
 
 <body>
     <?php get_songs($_SESSION['code'], $client_id, $client_secret); ?>
 </body>
+
 </html>
 
 <?php
