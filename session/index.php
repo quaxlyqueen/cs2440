@@ -3,12 +3,12 @@ session_start();
 if ($_SESSION['new-access'] == true) {
     $_SESSION['new-access'] = false;
 }
-require_once '../vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
 
-include_once('session/includes/functions.php');
+include_once('includes/functions.php');
 authUser();
 ?>
 
@@ -17,25 +17,25 @@ authUser();
 
 <head>
     <title>Session</title>
-    <link href="/session/css/styles.css" type="text/css" rel="stylesheet">
-    <script src="/session/js/index.js"></script>
+    <link href="css/styles.css" type="text/css" rel="stylesheet">
+    <script src="js/index.js"></script>
 </head>
 
 <body>
-    <?php include_once('/session/includes/nav.php'); ?>
+    <?php include_once('includes/nav.php'); ?>
     <div id="content">
         <?php
         $page = $_GET['page'];
         switch ($_GET['page']) {
             case 'home':
-                $_GET['file'] = '/session/includes/fbi.txt';
+                $_GET['file'] = 'includes/fbi.txt';
                 getHome();
                 break;
             case 'video':
-                include('/session/includes/video.php');
+                include('includes/video.php');
                 break;
             case 'account':
-                include('/session/includes/account.php');
+                include('includes/account.php');
                 break;
             default:
                 getHome();

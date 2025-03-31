@@ -61,8 +61,8 @@ if (isset($_GET['logout'])) {
 
 <head>
     <title>Spies</title>
-    <link href="/insecure/css/styles.css" type="text/css" rel="stylesheet">
-    <script src="/insecure/js/index.js"></script>
+    <link href="css/styles.css" type="text/css" rel="stylesheet">
+    <script src="js/index.js"></script>
 </head>
 
 <body>
@@ -96,8 +96,8 @@ if (isset($_GET['logout'])) {
     </div>
     <form method="get">
       <div class="row">
-        <button name="file" value="insecure/includes/fbi.txt">FBI</button>
-        <button name="file" value="insecure/includes/spies.txt">Spies</button>
+        <button name="file" value="includes/fbi.txt">FBI</button>
+        <button name="file" value="includes/spies.txt">Spies</button>
         <button name="logout" value="true" class="reset">Logout</button>
       </div>
     </form>

@@ -44,8 +44,8 @@ $poll_options = [
 
 <head>
     <title>Poll</title>
-    <link href="/poll/css/styles.css" type="text/css" rel="stylesheet">
-    <script src="/poll/js/index.js" defer></script>
+    <link href="css/styles.css" type="text/css" rel="stylesheet">
+    <script src="js/index.js" defer></script>
 </head>
 
 <body>

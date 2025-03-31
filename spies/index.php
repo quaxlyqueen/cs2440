@@ -10,7 +10,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $password = $_POST['password'];
     if (array_key_exists($username, $users) && $users[$username] === $password) {
         $_SESSION['access'] = true;
-        $_GET['file'] = 'spies/includes/fbi.txt';
+        $_GET['file'] = 'includes/fbi.txt';
     } else {
         $_GET['error'] = true;
     }
@@ -18,7 +18,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 if (isset($_GET['logout'])) {
     $_SESSION['access'] = false;
-    header('Location: ./spies');
+    header('Location: .');
 }
 
 ?>
@@ -28,8 +28,8 @@ if (isset($_GET['logout'])) {
 
 <head>
     <title>Spies</title>
-    <link href="spies/css/styles.css" type="text/css" rel="stylesheet">
-    <script src="spies/js/index.js"></script>
+    <link href="css/styles.css" type="text/css" rel="stylesheet">
+    <script src="js/index.js"></script>
 </head>
 
 <body>
@@ -62,8 +62,8 @@ if (isset($_GET['logout'])) {
     </div>
     <form method="get">
       <div class="row">
-        <button name="file" value="spies/includes/fbi.txt">FBI</button>
-        <button name="file" value="spies/includes/spies.txt">Spies</button>
+        <button name="file" value="includes/fbi.txt">FBI</button>
+        <button name="file" value="includes/spies.txt">Spies</button>
         <button name="logout" value="true" class="reset">Logout</button>
       </div>
     </form>
