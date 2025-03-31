@@ -12,7 +12,7 @@ echo '
 
 function getLogoutButton()
 {
-  if ($_SESSION['new-access'] == true)
+  if ($_SESSION['new-access'])
     return '<button name="logout" value="true" class="reset">Logout</button>';
 }
 

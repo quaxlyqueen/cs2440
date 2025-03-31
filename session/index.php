@@ -1,8 +1,5 @@
 <?php
 session_start();
-if ($_SESSION['new-access'] == true) {
-    $_SESSION['new-access'] = false;
-}
 require_once 'vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);

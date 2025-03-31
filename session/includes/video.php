@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if ($_SESSION['new-access'] != true)
+if (!$_SESSION['new-access'])
     header('Location: .');
 
 echo '<h1>YouTube Video</h1>';
