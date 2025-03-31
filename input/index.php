@@ -1,26 +1,26 @@
 <?php
 if (isset($_POST['first_name']))
-    $first_name = $_POST['first_name'];
+  $first_name = $_POST['first_name'];
 if (isset($_POST['last_name']))
-    $last_name = $_POST['last_name'];
+  $last_name = $_POST['last_name'];
 if (isset($_POST['email']))
-    $email = $_POST['email'];
+  $email = $_POST['email'];
 if (isset($_POST['phone_number']))
-    $phone_number = $_POST['phone_number'];
+  $phone_number = $_POST['phone_number'];
 ?>
 <!doctype html>
 <html lang="en">
 
 <head>
   <title>Input</title>
-  <link href="input/css/styles.css" rel="stylesheet" type="text/css">
-  <script src="input/js/index.js"></script>
+  <link href="/input/css/styles.css" rel="stylesheet" type="text/css">
+  <script src="/input/js/index.js"></script>
 </head>
 
 <body>
   <h1>Input Assignment</h1>
   <?php
-if ($first_name || $last_name || $email || $phone_number) {
+  if ($first_name || $last_name || $email || $phone_number) {
     echo '
       <div id="confirmation">
         <h3>Thank you for contacting me!</h3>
@@ -32,7 +32,7 @@ if ($first_name || $last_name || $email || $phone_number) {
         </div>
       </div>
     ';
-} else {
+  } else {
     echo '
       <div id="form">
         <form method="post">
@@ -48,8 +48,8 @@ if ($first_name || $last_name || $email || $phone_number) {
         </form>
       </div>
 ';
-}
-?>
+  }
+  ?>
 </body>
 
 </html>

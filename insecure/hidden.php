@@ -44,8 +44,8 @@ function fileRead($file)
 
 <head>
     <title>Spies</title>
-    <link href="insecure/css/styles.css" type="text/css" rel="stylesheet">
-    <script src="insecure/js/index.js"></script>
+    <link href="/insecure/css/styles.css" type="text/css" rel="stylesheet">
+    <script src="/insecure/js/index.js"></script>
 </head>
 
 <body>

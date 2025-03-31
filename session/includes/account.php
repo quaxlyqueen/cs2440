@@ -4,7 +4,7 @@ session_start();
 if ($_SESSION['new-access'] !== true)
     header('Location: .');
 
-include_once ('functions.php');
+include_once('functions.php');
 
 echo '<h1>Account</h1>';
 
@@ -24,4 +24,3 @@ echo '<div id="account-content">
             <button>Submit</button>
         </form>
     </div>';
-?>
