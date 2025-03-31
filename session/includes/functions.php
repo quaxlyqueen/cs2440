@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Use environment variables for the database password and IP address.
 $db_pass = $_ENV['DATABASE_PASSWORD'];
 $ip_addr = $_ENV['IP_ADDRESS'];
