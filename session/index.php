@@ -8,7 +8,7 @@ require_once '../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
 
-include_once('/session/includes/functions.php');
+include_once('session/includes/functions.php');
 authUser();
 ?>
 
