@@ -3,11 +3,18 @@
 $db_pass = $_ENV['DATABASE_PASSWORD'];
 $ip_addr = $_ENV['IP_ADDRESS'];
 
+if ($_SERVER['HTTP_HOST'] == 'localhost') {
+    define('HOST', 'localhost');
+    define('USER', 'root');
+    define('PASS', $db_pass);
+    define('DB', 'secureusers');
+} else {
+    define('HOST', $ip_addr);
+    define('USER', 'root');
+    define('PASS', $db_pass);
+    define('DB', 'secureusers');
+}
 // Make some constants
-define('HOST', 'localhost');
-define('USER', 'root');
-define('PASS', $db_pass);
-define('DB', 'secureusers');
 
 function table_from_file($file)
 {
