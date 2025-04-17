@@ -41,7 +41,7 @@ function getHome()
           </div>
         </form>
     ';
-    } else if (isset($_GET['file']) && isset($_SESSION['access'])) {
+    } else if (isset($_GET['file']) && isset($_SESSION['new-access'])) {
         echo '
     <div class="card success">
       <h5 class="success">Access Granted.</h5>
