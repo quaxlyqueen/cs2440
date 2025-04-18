@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'Hack Nerd Font Mono';
+  src: url('/includes/HackNerdFontMono-Regular.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Hack Nerd Font Mono', Hack, sans-serif;
+}
+
+h1 {
+  font-size: 5vw;
+  font-weight: 800;
+  text-align: center;
+  margin: 35px;
+}
+
+h3 {
+  font-size: 3vw;
+  font-weight: 600;
+  text-align: center;
+}
+
+p,
+label,
+select,
+option,
+input {
+  font-size: 1.75vw;
+  margin: 15px;
+}
+
+pre {
+  font-size: 1.5vw;
+}
+
+form {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 25% 50%;
+  column-gap: 25%;
+}
+
+input[type="submit"] {
+  grid-column: span 2;
+}
+
+.card {
+  padding: 50px;
+  width: 40%;
+  margin: 0 auto;
+  background-color: green;
+  border-radius: 18px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
