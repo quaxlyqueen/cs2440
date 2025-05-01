@@ -1,0 +1,28 @@
+:root {
+  --bg: #EBF2FA;
+  --gold: #FFD700;
+  --brwn: #F4A460;
+  --blue: #1E90FF;
+  --red: #DC143C;
+}
+
+nav {
+  background-color: var(--bg);
+  border-bottom: 2px solid var(--gold);
+}
+
+nav *,
+nav *:visited {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 800;
+  transition-duration: 500ms;
+}
+
+nav ul li a:hover {
+  background-color: var(--gold);
+}
+
+body {
+  background-color: var(--bg);
+}

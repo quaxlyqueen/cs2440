@@ -1,0 +1,17 @@
+{
+    "name": "violet/catalog",
+    "autoload": {
+        "psr-4": {
+            "Violet\\Catalog\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Josh Ashton",
+            "email": "me@joshashton.dev"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

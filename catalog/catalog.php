@@ -1,0 +1,17 @@
+<?php
+include_once 'functions/init.php';
+include_once 'functions/catalog.php';
+
+// UI Components
+foreach (glob('components/products/*.php') as $file)
+  require_once $file;
+
+include_once 'components/head.php';
+
+echo '<h1>Catalog</h1>';
+
+echo '<div id="catalog" class="std_width center">';
+echo catalog_grid(fetch_catalog());
+echo '</div>';
+
+include_once 'components/foot.php';
