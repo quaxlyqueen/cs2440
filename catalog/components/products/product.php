@@ -18,7 +18,7 @@ function product_page($product)
           <input type="hidden" name="product_id" value="' . $product['id'] . '" id="product_id">
           <div class="column margin center_children">
             <label for="quantity">Quantity:</label>
-            <input type="number" value="1" id="quantity" name="quantity" min="1" class="md_width">
+            <input type="number" value="1" id="quantity" name="quantity" min="1" max="1000" class="full_width">
           </div>
           
           <input type="submit" class="margin" id="add_to_cart_btn" value="Add to Cart">

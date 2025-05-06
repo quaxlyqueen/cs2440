@@ -5,8 +5,15 @@ function cart_layout()
   $total = 0;
 
   $layout = '
-    <div class="grid_2x1 center std_width glass padding">
-      <div class="card list full_width padding shadow" style="height: 700px;">
+    <div id="cart_container" class="glass std_width column center margin-top padding" style="height: 600px; overflow-y: auto;">
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>Unit $</th>
+          <th>Total $</th>
+          <th></th>
+        </tr>
   ';
 
   foreach ($_SESSION['cart'] as $id => $q) {
@@ -16,8 +23,8 @@ function cart_layout()
   }
 
   $layout .= '
-      </div>
-      ' . cart_checkout($total) . '
+      </table>
+    ' . cart_checkout($total) . '
     </div>
   ';
 

@@ -4,6 +4,7 @@ if (!isset($_GET['id']))
 
 require_once 'functions/init.php';
 require_once 'functions/catalog.php';
+require_once 'functions/user.php';
 
 // UI Components
 foreach (glob('components/products/*.php') as $file)

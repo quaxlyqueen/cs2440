@@ -3,7 +3,7 @@
 function cart_checkout($total)
 {
   $checkout = '
-    <div class="card full_width column padding shadow" style="height: auto;">
+    <div class="card full_width column padding shadow margin-top" style="height: auto;">
       <form method="post">
         <input type="hidden" name="form_id" value="checkout">
         <div class="row full_width space_between margin-top margin-bottom">
@@ -89,9 +89,12 @@ function cart_checkout($total)
           </div>
         </div>
         <div class="line margin-bottom"></div>
-        <div class="column center">
-          <h3 id="total">' . format_money($total) . '</h3>
-          <input type="submit" value="Place Order">
+        <div class="column center center_children">
+          <div class="row space_between full_width">
+            <h3>Total:</h3>
+            <h3 id="total">' . format_money($total) . '</h3>
+          </div>
+          <input type="submit" value="Place Order" class="sm_width margin-top padding">
         </div>
       </form>
     </div>

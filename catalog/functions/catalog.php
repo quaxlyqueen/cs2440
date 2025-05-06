@@ -32,11 +32,11 @@ function handle_cart()
             case 'remove':
                 $_SESSION['cart'][$id] = 0;
                 unset($_SESSION['cart'][$id]);
-                echo urlencode(format_money(calculate_total()));
+                echo json_encode(['total' => format_money(calculate_total()), 'item_total' => format_money(fetch_product($id)['price'] * $_POST['quantity']), 'count' => count($_SESSION['cart'])]);
                 break;
             case 'adjust':
                 $_SESSION['cart'][$id] = $_POST['quantity'];
-                echo urlencode(format_money(calculate_total()));
+                echo json_encode(['total' => format_money(calculate_total()), 'item_total' => format_money(fetch_product($id)['price'] * $_POST['quantity'])]);
                 break;
         }
     }

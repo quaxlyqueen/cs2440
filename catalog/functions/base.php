@@ -10,15 +10,8 @@ function pretty_dump($arg)
 
 function format_money($in)
 {
+    $in = number_format($in, 2);
     $in = '$' . $in;
-    $parts = explode('.', $in);
-    if (count($parts) == 1)
-        $in .= '.00';
-    else {
-        if (strlen($parts[1]) == 1) {
-            $in .= '0';
-        }
-    }
 
     return $in;
 }

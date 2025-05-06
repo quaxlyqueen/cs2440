@@ -1,12 +1,20 @@
+const add_to_cart_form = document.querySelector('#add_to_cart');
 const is_logged_in = document.querySelector("#is_logged_in");
 const product_id = document.querySelector("#product_id");
 const quantity = document.querySelector("#quantity");
-const add_to_cart = document.querySelector('input[type="submit"]');
+const add_to_cart = document.querySelector('#add_to_cart_btn');
 
 const modal = document.querySelector(".modal");
-const username = document.querySelector("#username");
-const password = document.querySelector("#password");
-const login_button = document.querySelector("#login_submit");
+
+quantity.addEventListener('input', () => {
+  if (quantity.value <= 0) {
+    quantity.style.border = '2px solid red';
+    add_to_cart.disabled = true;
+  } else {
+    quantity.style.border = 'none';
+    add_to_cart.disabled = false;
+  }
+});
 
 add_to_cart.addEventListener("click", (e) => {
   e.preventDefault();
@@ -24,8 +32,8 @@ add_to_cart.addEventListener("click", (e) => {
         let dot = document.querySelector('#dotton');
         let count = document.querySelector('#dotton > small');
         count.innerText = decodeURIComponent(data);
-        
-        if(dot.style.visibility == 'hidden') {
+
+        if (dot.style.visibility == 'hidden') {
           dot.style.visibility = 'visible';
           dot.style.position = 'absolute';
           dot.style.top = '6px';
@@ -57,5 +65,6 @@ add_to_cart.addEventListener("click", (e) => {
         modal.classList.add("fade-in");
       }
     });
+
   }
 });

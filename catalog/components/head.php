@@ -18,6 +18,8 @@
             break;
         case '/catalog/product.php':
             echo '<script src="js/product_page.js" defer></script>';
+            if (!isset($_SESSION['id']))
+                echo '<script src="js/login.js" defer></script>';
             break;
         case '/catalog/cart.php':
             echo '<script src="js/cart.js" defer></script>';

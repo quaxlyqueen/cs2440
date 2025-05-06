@@ -75,7 +75,7 @@ function initial_bubbles() {
     bubble.style.width = size + "px";
     bubble.style.borderRadius = "50%";
     bubble.style.backgroundColor = color;
-    bubble.style.opacity = 1;
+    bubble.style.opacity = Math.random();
     bubble.style.setProperty("--random-x", randomX);
     bubble.style.setProperty("--random-y", randomY);
     bubble.style.animationDelay = delay;

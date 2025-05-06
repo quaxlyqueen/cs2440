@@ -1,9 +1,8 @@
-const form = document.querySelector("form");
+const form = document.querySelector("#login_form");
 const username_field = document.querySelector("#username");
 const password_field = document.querySelector("#password");
-const submit_button = document.querySelector('input[type="submit"]');
+const submit_button = document.querySelector('#login_submit');
 const err = document.querySelector("#invalid");
-let rp = '';
 
 submit_button.addEventListener("click", (e) => {
   e.preventDefault();
