@@ -8,13 +8,18 @@
     <script src="js/index.js" defer></script>
     <?php
     switch ($_SERVER['SCRIPT_NAME']) {
-        case '/create-account.php':
+        case '/catalog/index.php':
+            if (!isset($_SESSION['id']))
+                echo '<script src="js/login.js" defer></script>';
+            break;
+
+        case '/catalog/create-account.php':
             echo '<script src="js/create-account.js" defer></script>';
             break;
-        case '/product.php':
+        case '/catalog/product.php':
             echo '<script src="js/product_page.js" defer></script>';
             break;
-        case '/cart.php':
+        case '/catalog/cart.php':
             echo '<script src="js/cart.js" defer></script>';
             break;
     }

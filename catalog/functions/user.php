@@ -1,8 +1,9 @@
 <?php
 
 if (isset($_POST['form_id'])) {
-    include_once '../vendor/autoload.php';
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+    session_start();
+    require_once '/home/prod/cs2440/catalog/vendor/autoload.php';
+    $dotenv = Dotenv\Dotenv::createImmutable('/home/prod/cs2440/catalog');
     $dotenv->safeLoad();
 
     include_once 'base.php';
@@ -17,7 +18,7 @@ if (isset($_POST['form_id'])) {
             break;
         case 'login':
             if (isset($_POST['username']) && isset($_POST['password']))
-                echo json_encode(login($_POST['username'], $_POST['password']));
+                echo login($_POST['username'], $_POST['password']) ? 'granted' : 'denied';
     }
 }
 

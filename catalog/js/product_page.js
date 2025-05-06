@@ -12,7 +12,7 @@ add_to_cart.addEventListener("click", (e) => {
   e.preventDefault();
 
   if (is_logged_in.value == "true") {
-    fetch("functions/catalog.php", {
+    fetch("/catalog/functions/catalog.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -21,7 +21,23 @@ add_to_cart.addEventListener("click", (e) => {
     })
       .then((response) => response.text())
       .then((data) => {
-        document.querySelector('#dotton > small').innerText = decodeURIComponent(data);
+        let dot = document.querySelector('#dotton');
+        let count = document.querySelector('#dotton > small');
+        count.innerText = decodeURIComponent(data);
+        
+        if(dot.style.visibility == 'hidden') {
+          dot.style.visibility = 'visible';
+          dot.style.position = 'absolute';
+          dot.style.top = '6px';
+          dot.style.right = '6px';
+          dot.style.borderRadius = '50%';
+          dot.style.height = '20px';
+          dot.style.width = '20px';
+          dot.style.zIndex = '5';
+          count.style.position = 'absolute';
+          count.style.left = '4px';
+          count.style.top = '-2px';
+        }
       });
   } else {
     if (modal.classList[0] === "fade-in") {

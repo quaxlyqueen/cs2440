@@ -2,13 +2,13 @@ const form = document.querySelector("form");
 const username_field = document.querySelector("#username");
 const password_field = document.querySelector("#password");
 const submit_button = document.querySelector('input[type="submit"]');
-
 const err = document.querySelector("#invalid");
+let rp = '';
 
 submit_button.addEventListener("click", (e) => {
   e.preventDefault();
 
-  fetch("functions/user.php", {
+  fetch("/catalog/functions/user.php", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
@@ -23,7 +23,7 @@ submit_button.addEventListener("click", (e) => {
       return response.text(); // Parse response body as JSON
     })
     .then((data) => {
-      if (data == "true") form.submit();
+      if (data == "granted") form.submit();
       else err.innerText = "Username or Password are incorrect.";
     });
 });

@@ -19,7 +19,7 @@ if (isset($_SESSION['id'])) {
   <li>
     <a href="cart.php" id="cart">
       <i class="nf nf-md-cart"></i>
-      ' . (!empty($_SESSION['cart']) ? '<div id="dotton"><small>' . count($_SESSION['cart']) . '</small></div>' : '') . '
+      ' . (!empty($_SESSION['cart']) ? '<div id="dotton"><small>' . count($_SESSION['cart']) . '</small></div>' : '<div id="dotton" style="visibility: hidden;"><small></small></div>') . '
     </a>
   </li>';
 }

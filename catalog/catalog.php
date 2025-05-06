@@ -11,6 +11,7 @@ include_once 'components/head.php';
 echo '<h1 class="margin-left">Catalog</h1>';
 
 echo '<div id="catalog" class="std_width center">';
+pretty_dump(fetch_catalog());
 echo catalog_grid(fetch_catalog());
 echo '</div>';
 

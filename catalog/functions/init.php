@@ -7,7 +7,7 @@ require_once 'vendor/autoload.php';
 require_once 'functions/base.php';
 
 // Load environment variables.
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv = Dotenv\Dotenv::createImmutable('/home/prod/cs2440/catalog');
 $dotenv->safeLoad();
 
 require_once 'functions/db.php';

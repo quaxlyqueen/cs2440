@@ -38,7 +38,7 @@ function handle_input() {
 function handle_username() {
   const username = username_field.value;
 
-  fetch("functions/user.php", {
+  fetch("/catalog/functions/user.php", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",

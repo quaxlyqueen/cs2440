@@ -6,7 +6,7 @@ $db_pass = $_ENV['DB_PW'];
 $ip_addr = $_ENV['DB_IP'];
 
 // Make some constants
-if ($_SERVER['HTTP_HOST'] == 'localhost:2440') {
+if ($_SERVER['HTTP_HOST'] == 'localhost') {
     define('HOST', 'localhost');
     define('USER', $db_user);
     define('PASS', $db_pass);

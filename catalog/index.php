@@ -5,8 +5,6 @@ require_once 'functions/user.php';
 if (isset($_POST['username']) && isset($_POST['password'])) {
     if (login($_POST['username'], $_POST['password'])) {
         header('Location: catalog.php');
-    } else {
-        echo '<p>Username and/or password are incorrect!</p>';
     }
 }
 

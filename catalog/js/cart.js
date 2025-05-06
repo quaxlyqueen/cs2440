@@ -17,7 +17,7 @@ function handle_quantity_change(id, q, item) {
   if (parseInt(q) == 0) {
     remove_item(id, item);
   } else {
-    fetch("functions/catalog.php", {
+    fetch("/catalog/functions/catalog.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -32,7 +32,7 @@ function handle_quantity_change(id, q, item) {
 }
 
 function remove_item(id, item) {
-  fetch("functions/catalog.php", {
+  fetch("/catalog/functions/catalog.php", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",

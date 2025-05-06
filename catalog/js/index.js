@@ -50,22 +50,22 @@ function initial_bubbles() {
     let c = Math.random();
     let d = Math.random();
 
-    if (Math.random() > 0.5) a *= -1;
+    if (Math.random() > 0.2) a *= -1;
 
-    if (Math.random() > 0.5) b *= -1;
+    if (Math.random() > 0.7) b *= -1;
 
-    if (Math.random() > 0.5) c *= -1;
+    if (Math.random() > 0.6) c *= -1;
 
-    if (Math.random() > 0.5) d *= -1;
+    if (Math.random() > 0.9) d *= -1;
 
     if (Math.random() > 0.5) {
       let curveX = (Math.random() - 0.5) * 500 + "px";
       let curveY = (Math.random() - 0.5) * 500 + "px";
       bubble.style.setProperty("--curve-x", curveX);
       bubble.style.setProperty("--curve-y", curveY);
-      bubble.style.animationName = "float-curve"; // Apply the curved animation
+      bubble.style.animationName = "float-curve";
     } else {
-      bubble.style.animationName = "float-random"; // Keep the straight animation
+      bubble.style.animationName = "float-random";
     }
 
     bubble.style.position = "absolute";
@@ -75,7 +75,7 @@ function initial_bubbles() {
     bubble.style.width = size + "px";
     bubble.style.borderRadius = "50%";
     bubble.style.backgroundColor = color;
-    bubble.style.opacity = 0.8;
+    bubble.style.opacity = 1;
     bubble.style.setProperty("--random-x", randomX);
     bubble.style.setProperty("--random-y", randomY);
     bubble.style.animationDelay = delay;

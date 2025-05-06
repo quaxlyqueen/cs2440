@@ -1,9 +1,8 @@
 <?php
 if (isset($_POST['form_id'])) {
     session_start();
-    require_once '../vendor/autoload.php';
-    // Load environment variables.
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+    require_once '/home/prod/cs2440/catalog/vendor/autoload.php';
+    $dotenv = Dotenv\Dotenv::createImmutable('/home/prod/cs2440/catalog');
     $dotenv->safeLoad();
     require_once 'base.php';
     require_once 'db.php';
