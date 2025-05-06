@@ -2,38 +2,87 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-h1 {
-  font-size: 6vw;
+@view-transition {
+  navigation: auto;
 }
 
-h2 {
-  font-size: 4vw;
-}
-
-h3 {
-  font-size: 3vw;
-}
-
-h4 {
-  font-size: 2vw;
-}
-
+h1,
+h2,
+h3,
+h4,
 h5,
 h6,
 p,
 a,
-label {
-  font-size: 1vw;
+label,
+button,
+input,
+input[type="submit"],
+input[type="number"],
+select,
+option {
+  font-family: "Comic Relief", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+  font-size: 8vw;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 6vw;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 5vw;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 3vw;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 1.7vw;
+  font-weight: 500;
+}
+
+h6,
+p,
+a,
+label,
+input,
+select,
+option,
+ul li,
+i {
+  font-size: 1.3vw;
+}
+
+i {
+  text-align: center;
+  justify-self: center;
+  padding: 5px;
+}
+
+.line {
+  height: 2px;
+  border-bottom: 2px solid black;
+}
+
+.shadow {
+  box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.45);
 }
 
 /********** NAV BAR **********/
-nav {
-  margin-bottom: 25px;
-}
-
-nav ul {}
 
 nav ul li {
   display: inline-block;
@@ -44,6 +93,121 @@ nav ul li a {
   display: block;
   padding: 15px 15px 15px 15px;
   text-decoration: none;
+}
+
+#cart {
+  position: relative;
+}
+
+#dotton {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  z-index: 5;
+}
+
+#dotton * {
+  position: absolute;
+  left: 4px;
+  top: -2px;
+}
+
+#bg {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: hidden;
+}
+
+.bubble {
+  animation: float-random 10s infinite linear;
+}
+
+@keyframes float-random {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    /* We'll set the final translation in JavaScript */
+    transform: translate(var(--random-x), var(--random-y));
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes float-curve {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    /* Introduce an intermediate point to create a curve */
+    transform: translate(
+      calc(var(--random-x) / 2 + var(--curve-x)),
+      calc(var(--random-y) / 2 + var(--curve-y))
+    );
+  }
+
+  50% {
+    transform: translate(var(--random-x), var(--random-y));
+  }
+
+  75% {
+    transform: translate(
+      calc(var(--random-x) / 2 + var(--curve-x)),
+      calc(var(--random-y) / 2 + var(--curve-y))
+    );
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Add slight variations to the animation for a more natural feel */
+#bg:nth-child(odd) {
+  animation-delay: 1s;
+  animation-duration: 12s;
+}
+
+#bg:nth-child(even) {
+  animation-delay: 2s;
+  animation-duration: 9s;
+}
+
+/* You can add more variations using other nth-child selectors */
+#bg:nth-child(7n) {
+  animation-delay: 0.5s;
+  animation-duration: 11s;
+}
+
+#welcome {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  border-radius: 18px;
+  padding: 25px;
+  /* Optional: Add a slightly transparent background to the welcome card itself for better readability */
+}
+
+.glass {
+  border-radius: 18px;
+  backdrop-filter: blur(50px);
+  background-color: rgba(173, 202, 235, 0.4);
+}
+
+#welcome p {
+  float: right;
 }
 
 /********** LAYOUT CLASSES **********/
@@ -63,6 +227,17 @@ nav ul li a {
   justify-content: center;
 }
 
+.left_align {
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+}
+
+.right_align {
+  align-items: right;
+  justify-content: right;
+}
+
 .row {
   display: flex;
   flex-direction: row;
@@ -79,35 +254,72 @@ nav ul li a {
 
 .grid {
   display: grid;
-  grid-template-columns: 20% 20% 20% 20%;
-  column-gap: 75px;
+  grid-template-columns: 23% 23% 23% 23%;
+  column-gap: 2%;
   row-gap: 25px;
+  height: 600px;
+  overflow-y: scroll;
+  border-radius: 18px;
+}
+
+.grid_2x1 {
+  display: grid;
+  grid-template-columns: 48% 48%;
+  column-gap: 4%;
+}
+
+.list {
+  display: block;
+  overflow-y: auto;
+}
+
+.list * {
+  height: 35px;
+}
+
+/********** FORMS **********/
+input,
+select {
+  padding: 5px;
+  border: none;
+  outline: none;
+  border-radius: 9px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+/********** LISTS **********/
+ul li {
+  list-style: none;
 }
 
 /********** CARDS **********/
 .card {
   display: block;
-  width: 250px;
-  height: 250px;
-  border: 1px solid black;
+  width: 275px;
+  height: 275px;
+  border-radius: 18px;
 }
 
 .product_page_card {
   display: block;
-  border: 1px solid black;
+  border-radius: 18px;
 }
 
 .card .img_container img {
-  min-width: 60%;
-  max-width: 60%;
+  min-width: 50%;
+  max-width: 50%;
   height: auto;
 }
 
 .product_page_card .img_container img {
-  min-width: 30%;
-  max-width: 30%;
-  height: auto;
-  border: 1px solid red;
+  width: auto;
+  min-height: 275px;
+  max-height: 275px;
 }
 
 /********** MARGINS & PADDING **********/
@@ -158,6 +370,14 @@ nav ul li a {
 
 .full_width {
   width: 100%;
+}
+
+.md_width {
+  width: 45%;
+}
+
+.sm_width {
+  width: 20%;
 }
 
 /********** MODALS **********/

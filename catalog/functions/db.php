@@ -1,9 +1,9 @@
 <?php
 // Use environment variables for the database password and IP address.
-$db = $_ENV['DATABASE'];
-$db_user = $_ENV['DATABASE_USER'];
-$db_pass = $_ENV['DATABASE_PASSWORD'];
-$ip_addr = $_ENV['IP_ADDRESS'];
+$db = $_ENV['DB'];
+$db_user = $_ENV['DB_UN'];
+$db_pass = $_ENV['DB_PW'];
+$ip_addr = $_ENV['DB_IP'];
 
 // Make some constants
 if ($_SERVER['HTTP_HOST'] == 'localhost:2440') {
@@ -26,10 +26,11 @@ function exec_stmt($stmt, $param_types, ...$args)
     $stmt->execute();
     $result = $stmt->get_result();
 
-    if ($result)
+    if ($result) {
         return $result;
-    else
+    } else {
         return mysqli_insert_id($conn);
+    }
 }
 
 function get_connection()

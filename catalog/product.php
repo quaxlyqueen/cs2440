@@ -1,13 +1,13 @@
 <?php
 if (!isset($_GET['id']))
-  header('Location: catalog.php');
+    header('Location: catalog.php');
 
 require_once 'functions/init.php';
 require_once 'functions/catalog.php';
 
 // UI Components
 foreach (glob('components/products/*.php') as $file)
-  require_once $file;
+    require_once $file;
 
 require_once 'components/user/login.php';
 

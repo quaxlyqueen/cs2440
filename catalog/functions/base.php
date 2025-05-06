@@ -8,6 +8,21 @@ function pretty_dump($arg)
     return ob_get_clean();
 }
 
+function format_money($in)
+{
+    $in = '$' . $in;
+    $parts = explode('.', $in);
+    if (count($parts) == 1)
+        $in .= '.00';
+    else {
+        if (strlen($parts[1]) == 1) {
+            $in .= '0';
+        }
+    }
+
+    return $in;
+}
+
 function random_string()
 {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';

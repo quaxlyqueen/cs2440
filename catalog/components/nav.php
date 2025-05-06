@@ -1,6 +1,6 @@
 <?php
 $nav = '
-  <nav>
+  <nav class="glass">
     <ul>
       <div class="row space_between">
         <div>
@@ -12,7 +12,19 @@ $nav = '
         </div>
 
         <div>
-          ' . (isset($_SESSION['id']) ? '<li><a href="cart.php">Cart</a></li>' : '') . '
+';
+
+if (isset($_SESSION['id'])) {
+  $nav .= '
+  <li>
+    <a href="cart.php" id="cart">
+      <i class="nf nf-md-cart"></i>
+      ' . (!empty($_SESSION['cart']) ? '<div id="dotton"><small>' . count($_SESSION['cart']) . '</small></div>' : '') . '
+    </a>
+  </li>';
+}
+
+$nav .= '
           ' . (isset($_SESSION['id']) ? '<li><a href="logout.php">Logout</a></li>' : '') . '
           ' . (!isset($_SESSION['id']) ? '<li><a href="index.php">Login</a></li>' : '') . '
           ' . (!isset($_SESSION['id']) ? '<li><a href="create-account.php">Signup</a></li>' : '') . '

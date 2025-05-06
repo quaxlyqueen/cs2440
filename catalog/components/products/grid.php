@@ -2,7 +2,7 @@
 function catalog_grid($products)
 {
   $grid = '
-    <div class="grid center">
+    <div class="grid center glass padding-top padding-bottom padding-left">
   ';
 
   foreach ($products as $p)

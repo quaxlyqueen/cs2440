@@ -11,3 +11,7 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->safeLoad();
 
 require_once 'functions/db.php';
+
+if (isset($_SESSION['id']))
+    if (!isset($_SESSION['cart']))
+        $_SESSION['cart'] = [];
